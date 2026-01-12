@@ -59,7 +59,9 @@ public class PhoenixOdometryThread extends Thread {
    * since signals are sampled together.
    */
   public Queue<Double> getTimestampQueue() {
-    return timestampQueue;
+    Queue<Double> queue = new ArrayBlockingQueue<>(20);
+
+    return queue;
   }
 
   @Override

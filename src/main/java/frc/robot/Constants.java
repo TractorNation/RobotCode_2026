@@ -106,7 +106,7 @@ public final class Constants {
    * {@link RobotContainer#configureButtonBindings()}.
    * Change this to match your current driver or development environment.
    */
-  public static final Driver currentDriver = Driver.MACBOOK;
+  public static final Driver currentDriver = Driver.PROGRAMMING;
 
   /**
    * Driver control scheme options.
