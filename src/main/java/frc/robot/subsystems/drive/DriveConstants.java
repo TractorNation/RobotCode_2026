@@ -42,9 +42,9 @@ public class DriveConstants {
         public static final double MAX_LINEAR_SPEED = Units.feetToMeters(17.7);
         public static final double MAX_ANGULAR_SPEED = (MAX_LINEAR_SPEED / Constants.DRIVE_BASE_RADIUS);
 
-        public static final double PROTOBOT_DRIVE_GEAR_RATIO = 6.03;
+        public static final double PROTOBOT_DRIVE_GEAR_RATIO = 5.27;
 
-        public static final double COMPBOT_DRIVE_GEAR_RATIO = 6.03;
+        public static final double COMPBOT_DRIVE_GEAR_RATIO = 5.27;
 
         public static final double TURN_GEAR_RATIO = 26.09;
 
