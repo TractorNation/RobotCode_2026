@@ -64,7 +64,7 @@ public class ModuleIOTalonFX implements ModuleIO {
   private final StatusSignal<Voltage> turnAppliedVolts;
   private final StatusSignal<Current> turnCurrent;
 
-  private final boolean isTurnMotorInverted = true;
+  private final boolean isTurnMotorInverted = false;
   private final Rotation2d absoluteEncoderOffset;
 
   public ModuleIOTalonFX(int index) {
@@ -101,6 +101,7 @@ public class ModuleIOTalonFX implements ModuleIO {
       default:
         throw new RuntimeException("Invalid module index");
     }
+    
     final double DRIVE_GEAR_RATIO = DriveConstants.DRIVE_GEAR_RATIO;
 
     var driveConfig = new TalonFXConfiguration();
@@ -141,7 +142,7 @@ public class ModuleIOTalonFX implements ModuleIO {
     turnEncoderConfig.MagnetSensor.SensorDirection = SensorDirectionValue.CounterClockwise_Positive;
 
     cancoder.getConfigurator().apply(turnEncoderConfig);
-    
+
     timestampQueue = PhoenixOdometryThread.getInstance().makeTimestampQueue();
 
     drivePosition = driveTalon.getPosition();
@@ -234,7 +235,7 @@ public class ModuleIOTalonFX implements ModuleIO {
   @Override
   public void setDriveBrakeMode(boolean enable) {
     var config = new MotorOutputConfigs();
-    config.Inverted = InvertedValue.CounterClockwise_Positive;
+    config.Inverted = InvertedValue.Clockwise_Positive;
     config.NeutralMode = enable ? NeutralModeValue.Brake : NeutralModeValue.Coast;
     driveTalon.getConfigurator().apply(config);
   }

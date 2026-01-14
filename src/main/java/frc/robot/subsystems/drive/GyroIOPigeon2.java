@@ -35,7 +35,6 @@ public class GyroIOPigeon2 implements GyroIO {
       "CTRE Pigeon 2 did not initialize correctly");
 
   public GyroIOPigeon2() {
-    Constants.CANIVORE.isNetworkFD();
     pidgey.getConfigurator().apply(new Pigeon2Configuration());
     pidgey.getConfigurator().setYaw(0.0);
     yaw.setUpdateFrequency(DriveConstants.ODOMETRY_FREQUENCY);
