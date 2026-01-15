@@ -258,6 +258,7 @@ public class RobotContainer {
                 1,
                 programmingController.leftBumper()));
 
+        programmingController.button(7).onTrue(Commands.runOnce(robotState::zeroHeading));
         break;
 
       // When running sim on a Macbook, the controls are different than an Xbox
